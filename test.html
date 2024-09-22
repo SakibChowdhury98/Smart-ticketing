@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enable Button on Input Length</title>
+</head>
+<body>
+
+    <form>
+        <input type="text" id="inputField" placeholder="Enter 11 characters">
+        <button type="submit" id="submitButton" disabled>Submit</button>
+    </form>
+
+    <script>
+        // Get references to the input field and submit button
+        const inputField = document.getElementById('inputField');
+        const submitButton = document.getElementById('submitButton');
+
+        // Add an event listener for the 'input' event on the input field
+        inputField.addEventListener('input', function() {
+            // Check if the length of the input is exactly 11
+            if (inputField.value.length === 11) {
+                submitButton.disabled = false; // Enable submit button
+            } else {
+                submitButton.disabled = true;  // Disable submit button
+            }
+        });
+    </script>
+
+</body>
+</html>
